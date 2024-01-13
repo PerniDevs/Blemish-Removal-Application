@@ -10,7 +10,7 @@ Blemishes or dark spots are parts of the skin region which have high roughness r
 
 This Application uses both analysis to make the best performance out of it:
 
-### By using Spatial Domain Analysis (Sobel filters)
+### 1. Spatial Domain Analysis (Sobel filters)
 In this section we will compare, for an image patch, how the gradient images look like and what information can we get from them. We apply sobel filter to two patches - one at a smooth region and the other one to the blemish on the cheek. As follows a representation of the spatial domain to be analyzed
 
 <p align="center">
@@ -23,7 +23,7 @@ After this we apply the sobel filters in both X and Y directions in order to get
 
 Finally we take the lowest gradient value in X and Y of each of the key patches, compare them and replace the selected region with that key patch (this way we guarantee the smooth transition between regions)
 
-### And Frequency domain Analysis (Laplacian filter Kernels)
+### 2. Frequency domain Analysis (Laplacian filter Kernels)
 If the method described above doesn't find the lowest gradient between the two key patches, we proceed to do a second order analysis. 
 
 To reach this challenging step, we will use Fourier Transform for analysing the frequency content of the image. For a 1-D signal, if the value of the signal varies very fast, it is said to be a high frequency signal. Similarly for a 2-D signal like image, if the intensity values vary a lot, it is said to have high frequency content. For regions having gradients / edges or random noise, the frequency content increases. For a smooth region, the intensity variation is very less, thus a smooth region will have very low frequency content
